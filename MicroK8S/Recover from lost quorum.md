@@ -5,7 +5,7 @@ Note: that the following recovery process applies to clusters using the default 
 ### Task 1: Deploy some workloads
 Exceute the below command.
 ```
-microk8s kubectl create deploy dep1 --image nginx --replicas 3
+microk8s kubectl deploy dep1 --image nginx --replicas 3
 ```
 Expose the workload
 ```
@@ -21,7 +21,6 @@ Dqlite stores data and configuration files under `/var/snap/microk8s/current/var
 ```
 tar -cvf backup.tar /var/snap/microk8s/current/var/kubernetes/backend
 ```
-***Note:*** After creating a tarball (or taking a backup), delete the deployment to verify recovery in subsequent tasks.
 
 ### Task 3: Stop dqlite on all nodes
 Stopping MicroK8s is done with:
@@ -30,19 +29,24 @@ microk8s stop
 ```
 
 ### Task 4: Set the new state of the database cluster
-
+```
+cp backup.tar /var/snap/microk8s/current/var/kubernetes/backend/
+```
+```
+cd /
+```
 ```
 sudo rm -rf var/snap/microk8s/current/var/kubernetes/backend
 ```
-Now check for ***backup.tar*** file created in previous steps
+```
+sudo cp ~/backup.tar .
+```
 ```
 ls
 ```
-Extract the contents of the  ***backup.tar*** file
 ```
 sudo tar -xvf backup.tar
 ```
-Run the following command to see the files and directories that were backed up and extracted
 ```
 sudo ls /var/snap/microk8s/current/var/kubernetes/backend/
 ```
