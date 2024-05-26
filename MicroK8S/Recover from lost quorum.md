@@ -21,6 +21,7 @@ Dqlite stores data and configuration files under `/var/snap/microk8s/current/var
 ```
 tar -cvf backup.tar /var/snap/microk8s/current/var/kubernetes/backend
 ```
+***Note:*** After creating a tarball (or taking a backup), delete the deployment to verify recovery in subsequent tasks.
 
 ### Task 3: Stop dqlite on all nodes
 Stopping MicroK8s is done with:
@@ -29,24 +30,19 @@ microk8s stop
 ```
 
 ### Task 4: Set the new state of the database cluster
-```
-cp backup.tar /var/snap/microk8s/current/var/kubernetes/backend/
-```
-```
-cd /
-```
+
 ```
 sudo rm -rf var/snap/microk8s/current/var/kubernetes/backend
 ```
-```
-sudo cp ~/backup.tar .
-```
+Now check for ***backup.tar*** file created in previous steps
 ```
 ls
 ```
+Extract the contents of the  ***backup.tar*** file
 ```
 sudo tar -xvf backup.tar
 ```
+Run the following command to see the files and directories that were backed up and extracted
 ```
 sudo ls /var/snap/microk8s/current/var/kubernetes/backend/
 ```
