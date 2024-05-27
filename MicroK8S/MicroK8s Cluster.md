@@ -37,19 +37,19 @@ microk8s kubectl get no
 
 First, on the node you want to remove,in this case `microk8s-node3` run microk8s leave. MicroK8s on the departing node will restart its own control plane and resume operations as a full single node cluster.
 ```
-microk8s leave
+sudo microk8s leave
 ```
 To complete the node removal, call microk8s remove-node from the remaining nodes to indicate that the departing (unreachable now) node should be removed permanently.
 ```
-microk8s remove-node <ip-addr>
+sudo microk8s remove-node <ip-addr>
 ```
 Now on `microk8s-node2` run microk8s leave. 
 ```
-microk8s leave
+sudo microk8s leave
 ```
 To complete the node removal, call microk8s remove-node from the remaining node `microk8s-node1` to indicate that the departing (unreachable now) node should be removed permanently.
 ```
-microk8s remove-node <ip-addr>
+sudo microk8s remove-node <ip-addr>
 ```
 
 ### Task 3: High Availability
