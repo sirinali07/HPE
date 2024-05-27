@@ -97,7 +97,7 @@ Then look at the status of the cluster with the status command:
 ```
 sudo microceph status
 ```
-Create loopback device for virtual disks: Use the below command to add a loop device with a size of 4GB and a count of 3
+Create loopback device for virtual disks: Use the below command to add a loop device with a size of 4GB and a count of 3 (optional: if you don't have physical disk)
 ```
 sudo microceph disk add loop,4G,3
 ```
