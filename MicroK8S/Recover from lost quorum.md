@@ -5,7 +5,7 @@ Note: that the following recovery process applies to clusters using the default 
 ### Task 1: Deploy some workloads
 Exceute the below command.
 ```
-microk8s kubectl deploy dep1 --image nginx --replicas 3
+microk8s kubectl create deploy dep1 --image nginx --replicas 3
 ```
 Expose the workload
 ```
