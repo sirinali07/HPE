@@ -182,7 +182,14 @@ sudo ceph osd pool application enable rbd_pool rbd
 The above command initializes the rbd_pool pool for use with RBD (Rados Block Device). It sets up the necessary configuration and structures within the pool to support RBD.
 ```
 sudo rbd pool init rbd_pool
-``` 
+```
+Create an RBD image named rbd_volume with a size of 4GB in the rbd_pool pool.
+```
+sudo rbd create --size 4G rbd_pool/rbd_volume
+```
+```
+sudo rbd ls rbd_pool
+```
 Now we will load the RBD (Rados Block Device) kernel module, which is necessary for interacting with RBD devices
 ```
 sudo modprobe rbd
@@ -219,10 +226,7 @@ Set the permissions of the ceph.conf file to 777, providing read, write, and exe
 ```
 sudo chmod 777 /etc/ceph/ceph.conf 
 ``` 
-Create an RBD image named rbd_volume with a size of 4GB in the rbd_pool pool.
-```
-sudo rbd create --size 4G rbd_pool/rbd_volume
-```
+
 Map the RBD (Rados Block Device) volume named rbd_volume from the rbd_pool pool to a block device on the system. After executing this command, the RBD volume will be accessible as a block device.
 ```
 sudo rbd map rbd_pool/rbd_volume
