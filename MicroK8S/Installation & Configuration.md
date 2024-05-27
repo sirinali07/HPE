@@ -65,7 +65,7 @@ sudo chown -f -R $USER ~/.kube
 ```
 You will also need to re-enter the session for the group update to take place:
 ```
-su - $USER
+sudo su
 ```
 or
 ```
@@ -127,7 +127,7 @@ microk8s kubectl get pods
 ```
 Expose the deployment
 ```
-microk8s kubectl expose deploy dep1 --type NodePort --name dep1-service --port 80
+microk8s kubectl expose deploy nginx --type NodePort --name nginx-service --port 80
 ```
 
 ### Task 6: Starting and Stopping MicroK8s
