@@ -214,21 +214,21 @@ To view detailed information
 ``` 
 sudo ceph osd pool ls detail
 ```  
-Create a new pool named rbd_pool with a size of 16 and a minimum of 16 placement groups.
+Create a new pool named rbd_pool_1 with a size of 16 and a minimum of 16 placement groups.
 ``` 
-sudo ceph osd pool create rbd_pool 16 16
+sudo ceph osd pool create rbd_pool_1 16 16
 ```  
 We can view the statistics about a specific pool in your Ceph cluster. 
 ``` 
-sudo ceph osd pool stats rbd_pool
+sudo ceph osd pool stats rbd_pool_1
 ```  
-Let’s enable the rbd application for the rbd_pool pool. 
+Let’s enable the rbd application for the rbd_pool_1 pool. 
 ``` 
-sudo ceph osd pool application enable rbd_pool rbd
+sudo ceph osd pool application enable rbd_pool_1 rbd
 ```  
-The above command initializes the rbd_pool pool for use with RBD (Rados Block Device). It sets up the necessary configuration and structures within the pool to support RBD.
+The above command initializes the rbd_pool_1 pool for use with RBD (Rados Block Device). It sets up the necessary configuration and structures within the pool to support RBD.
 ``` 
-sudo rbd pool init rbd_pool
+sudo rbd pool init rbd_pool_1
 ```  
 Now we will load the RBD (Rados Block Device) kernel module, which is necessary for interacting with RBD devices
 ``` 
@@ -266,13 +266,13 @@ View the detailed information about the files in the /etc/ceph/ directory, inclu
 ``` 
 ls -al /etc/ceph/
 ```  
-Create an RBD image named rbd_volume with a size of 4GB in the rbd_pool pool.
+Create an RBD image named rbd_volume with a size of 4GB in the rbd_pool_1 pool.
 ``` 
-sudo rbd create --size 4G rbd_pool/rbd_volume
+sudo rbd create --size 4G rbd_pool_1/rbd_volume
 ``` 
-Map the RBD (Rados Block Device) volume named rbd_volume from the rbd_pool pool to a block device on the system. After executing this command, the RBD volume will be accessible as a block device.
+Map the RBD (Rados Block Device) volume named rbd_volume from the rbd_pool_1 pool to a block device on the system. After executing this command, the RBD volume will be accessible as a block device.
 ``` 
-sudo rbd map rbd_pool/rbd_volume
+sudo rbd map rbd_pool_1/rbd_volume
 ```  
 View information about all block devices on the system, including disks and partitions.
 ``` 
