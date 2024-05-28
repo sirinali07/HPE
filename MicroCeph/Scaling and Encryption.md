@@ -56,4 +56,12 @@ FDE for OSDs is activated by passing the optional --encrypt flag when adding dis
 ```
 sudo microceph disk add /dev/nvme5n1 --wipe --encrypt
 ```
-Terminate the instance.
+```
+sudo microceph disk list
+```
+```
+sudo microceph status
+```
+```
+sudo ceph status
+```
