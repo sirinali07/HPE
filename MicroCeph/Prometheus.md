@@ -1,4 +1,4 @@
-## Prometheus
+## Prometheus (self Excercise)
 
 Add stable Helm chart repository to your Helm client
 ```
