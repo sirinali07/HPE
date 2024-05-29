@@ -94,7 +94,46 @@ vi storageclass.yml
 ```
 Add the below lines, save and exit using esc + :wq!
 ```
-***** ADDD THE YAML FILE HERE****
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: microceph-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ceph-rbd
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: microceph-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microceph-pod
+  template:
+    metadata:
+      labels:
+        app: microceph-pod
+    spec:
+      volumes:
+      - name: microceph-pv-storage
+        persistentVolumeClaim:
+           claimName: microceph-claim
+      containers:
+      - name: microceph-container
+        image: nginx
+        ports:
+          - containerPort: 80
+            name: "http-server"
+        volumeMounts:
+          - mountPath: "/usr/share/nginx/html"
+            name: microceph-pv-storage
+
 ```
 Apply the configuration defined in storageclass.yml to your Kubernetes cluster
 ```
