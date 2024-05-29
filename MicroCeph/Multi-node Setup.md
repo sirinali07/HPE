@@ -70,7 +70,20 @@ sudo microceph
 Check the version of microceph
 ```
 sudo microceph –version
-``` 
+```
+This displays the help information for managing Microceph clusters.
+Begin by initializing the cluster with the cluster bootstrap command
+```
+sudo microceph cluster bootstrap
+```
+View the cluster information
+```
+sudo microceph cluster list
+```
+Then look at the status of the cluster with the status command:
+```
+sudo microceph status
+```
 Run the command to add the new node to the Microceph cluster
 ```
 sudo microceph cluster add microceph-node02
