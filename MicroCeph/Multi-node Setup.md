@@ -57,7 +57,7 @@ bash
 ``` 
 Install Microceph
 ```
-sudo snap install microceph --stable
+sudo snap install microceph --channel=quincy/stable
 ```
 Next, prevent the software from being auto-updated
 ```
@@ -128,7 +128,7 @@ bash
 ``` 
 Install Microceph
 ```
-sudo snap install microceph --stable
+sudo snap install microceph --channel=quincy/stable
 ```
 Next, prevent the software from being auto-updated
 ```
@@ -171,7 +171,7 @@ bash
 ``` 
 Install Microceph
 ``` 
-sudo snap install microceph --stable
+sudo snap install microceph --channel=quincy/stable
 ``` 
 Next, prevent the software from being auto-updated
 ``` 
