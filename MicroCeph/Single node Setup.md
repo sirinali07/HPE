@@ -60,7 +60,7 @@ bash
 ```
 ### Task 2: Install Microceph
 ```
-sudo snap install microceph --stable
+sudo snap install microceph --channel=quincy/stable
 ``` 
 Next, prevent the software from being auto-updated
 ```
