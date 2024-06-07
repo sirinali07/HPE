@@ -212,7 +212,7 @@ ls /etc/ceph/
 ``` 
 This keyring file contains authentication credentials for the Ceph admin user, which are necessary for administrative tasks.
 ```
-sudo cp /var/snap/microceph/975/conf/ceph.client.admin.keyring  /etc/ceph/
+sudo cp /var/snap/microceph/current/conf/ceph.client.admin.keyring  /etc/ceph/
 ```
 Set the permissions of the ceph.client.admin.keyring file to 777, giving read, write, and execute permissions to all users.
 ```
@@ -220,7 +220,7 @@ sudo chmod 777 /etc/ceph/ceph.client.admin.keyring
 ``` 
 Copy the Ceph configuration file . The Ceph configuration file contains settings and configurations for the Ceph cluster.
 ```
-sudo cp /var/snap/microceph/975/conf/ceph.conf /etc/ceph/
+sudo cp /var/snap/microceph/current/conf/ceph..conf /etc/ceph/
 ```
 Set the permissions of the ceph.conf file to 777, providing read, write, and execute permissions to all users.
 ```
