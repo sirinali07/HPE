@@ -1,7 +1,7 @@
 ### Task 1: Launch Instances and configure MicroK8s on them
 
 Refer to the below link to launch 2 more instances and change the hostname to `microk8s-node2` and `microk8s-node3`.</br>
-https://github.com/Mehar-Nafis/Canonical/blob/main/MicroK8s/Installation%20%26%20Configuration.md</br>
+(https://github.com/sirinali07/HPE/blob/main/MicroK8S/Installation%20%26%20Configuration.md)</br>
 Make sure the below command is executed on both nodes before you move to the next task here.
 ```
 sudo snap install microk8s --classic --channel=1.28/stable
