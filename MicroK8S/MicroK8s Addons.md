@@ -10,11 +10,11 @@ While this does deliver a pure Kubernetes experience with the smallest resource 
 ### Task 1: Managing Core Add-ons and Community Add-ons
 To enable the CoreDNS addon:
 ```
-microk8s enable DNS
+microk8s enable dns
 ```
 These add-ons can be disabled at anytime using the disable command:
 ```
-microk8s disable DNS
+microk8s disable dns
 ```
 You can check the list of available and installed addons at any time.
 ```
