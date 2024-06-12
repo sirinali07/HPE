@@ -213,8 +213,9 @@ sudo systemctl status rbdmap.service
 List the contents of the /etc/ceph/ directory, where Ceph configuration files are typically stored.
 ```
 ls /etc/ceph/
-Note:- If rbd client is different machine then use `scp` to send `.keyring` and `.conf` file to the client with proper `scp cmd`
 ``` 
+Note:- If rbd client is different machine then use `scp` to send `.keyring` and `.conf` file to the client with proper `scp cmd`
+
 This keyring file contains authentication credentials for the Ceph admin user, which are necessary for administrative tasks.
 ```
 sudo cp /var/snap/microceph/current/conf/ceph.client.admin.keyring  /etc/ceph/
