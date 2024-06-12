@@ -1,4 +1,5 @@
 ## Prometheus (self Excercise)
+### Step 1 - Setup Prometheus with helm in microk8s
 
 Add stable Helm chart repository to your Helm client
 ```
@@ -42,4 +43,32 @@ sudo microk8s status
 ``` 
 To access the Prometheus dashboard use `Node’s_Public_IP:Nodeport`
 
- 
+ ### Step 2 - Setup Prometheus with  microk8s adons
+ Enable the `observability` or `prometheus(deprecated)` add-on in your MicroK8s cluster:
+```
+sudo microk8s enable observability
+```
+Verifying and list the pods and services specifically in the observability namespace:
+```
+sudo microk8s kubectl get pods -n observability
+```
+To access the `Prometheus dashboard` externally, you need to modify the Prometheus service configuration to change the service type from ***ClusterIP*** to ***NodePort***.
+```
+sudo microk8s kubectl -n observability edit service/kube-prom-stack-kube-prome-prometheus
+```
+To access the `Grafana dashboard` externally, you need to modify the Grafana service configuration to change the service type from ***ClusterIP*** to ***NodePort***.
+```
+sudo microk8s kubectl -n observability edit service/kube-prom-stack-grafana
+```
+List the services in the observability namespace, and note the respective ***nodePort***
+```
+sudo microk8s kubectl get svc -n observability
+```
+Retrieving Grafana Credentials
+```
+microk8s kubectl get secret -n observability kube-prom-stack-grafana -o jsonpath="{.data['admin-user']}" | base64 --decode; echo
+microk8s kubectl get secret -n observability kube-prom-stack-grafana -o jsonpath="{.data['admin-password']}" | base64 --decode; echo
+```
+Accessing Dashboards
+Prometheus: http://<public-ip>:<nodeport>
+Grafana: http://<public-ip>:<nodeport>
