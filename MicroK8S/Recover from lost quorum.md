@@ -1,7 +1,7 @@
 
 By default, a three-node MicroK8s cluster is highly available (HA). In HA mode, the default datastore, dqlite, uses a Raft-based protocol where an elected leader holds the definitive copy of the database. Normally, copies of the database are also maintained by two additional nodes. If the majority of the cluster members serving as database nodes are permanently lost (e.g., in a three-node cluster, if two nodes are lost), the cluster will become unavailable. However, if at least one database node remains, you can recover the cluster using the following manual steps.
 
-***Note:*** This recovery process applies only to clusters using the default dqlite datastore of MicroK8s. It does not recover any data stored in Persistent Volumes (PVs) on the lost nodes. Ensure that any lost nodes previously part of the cluster will not come back online. If a lost node can be reinstated, it must rejoin the cluster using the "microk8s leave", "microk8s add-node" and "microk8s join" commands.
+***Note:*** This recovery process applies only to clusters using the default dqlite datastore of MicroK8s. It does not recover any data stored in Persistent Volumes (PVs) on the lost nodes. Ensure that any lost nodes previously part of the cluster will not come back online. If a lost node can be reinstated, it must rejoin the cluster using the `microk8s leave`, `microk8s add-node` and `microk8s join` commands.
 
 ### Task 1: Backup the database
 Dqlite stores data and configuration files under `/var/snap/microk8s/current/var/kubernetes/backend/`. To make a safe copy of the current state log in to a surviving node and create tarball of the dqlite directory:
