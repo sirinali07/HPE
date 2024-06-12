@@ -190,6 +190,10 @@ sudo rbd create --size 4G rbd_pool/rbd_volume
 ```
 sudo rbd ls rbd_pool
 ```
+```
+sudo rbd info rbd_pool_1/rbd_volume
+```
+`On RBD Client:`
 Now we will load the RBD (Rados Block Device) kernel module, which is necessary for interacting with RBD devices
 ```
 sudo modprobe rbd
@@ -209,6 +213,7 @@ sudo systemctl status rbdmap.service
 List the contents of the /etc/ceph/ directory, where Ceph configuration files are typically stored.
 ```
 ls /etc/ceph/
+Note:- If rbd client is different machine then use `scp` to send `.keyring` and `.conf` file to the client with proper `scp cmd`
 ``` 
 This keyring file contains authentication credentials for the Ceph admin user, which are necessary for administrative tasks.
 ```
