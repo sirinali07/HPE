@@ -75,19 +75,18 @@ sudo microk8s enable rook-ceph
 This command sets up a connection to an external Ceph cluster.
 ```
 sudo microk8s connect-external-ceph
+```
+Retrieve the status of rook-ceph pods, run the following command.
+```
+sudo microk8s kubectl get po -A
 ``` 
 Check the storage classes again to verify that the Rook Ceph storage classes have been added or configured correctly
 ```
 sudo microk8s kubectl get sc
-``` 
-Retrieve the list of all pods across all namespaces and continuously watches for updates (-w stands for watch)
 ```
-sudo microk8s kubectl get po -A -w
-``` 
-Retrieve the status of all pods across all namespaces now you run the command.
 ```
-sudo microk8s kubectl get po -A
-``` 
+sudo microk8s kubectl describe sc
+```
 Create a YAML configuration that defines a PersistentVolumeClaim (PVC) and a Deployment for a simple application using a Nginx container. The PVC is intended to use Ceph RBD as its storage backend.
 ```
 vi storageclass.yml
