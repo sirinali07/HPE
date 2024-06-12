@@ -70,5 +70,5 @@ microk8s kubectl get secret -n observability kube-prom-stack-grafana -o jsonpath
 microk8s kubectl get secret -n observability kube-prom-stack-grafana -o jsonpath="{.data['admin-password']}" | base64 --decode; echo
 ```
 Accessing Dashboards
-Prometheus: http://<public-ip>:<nodeport>
-Grafana: http://<public-ip>:<nodeport>
+Prometheus: http://`public-ip`:`nodePort`
+Grafana: http://`public-ip`:`nodePort`
