@@ -53,7 +53,7 @@ microk8s kubectl get csidrivers
 
 ## Task 3: Create a StorageClass for NFS
 
-Next, we will need to create a Kubernetes Storage Class that uses the nfs.csi.k8s.io CSI driver. Assuming you have configured an NFS share /srv/nfs and the address of your NFS server is <privateIPofHost>, create the following file:
+Next, we will need to create a Kubernetes Storage Class that uses the nfs.csi.k8s.io CSI driver. Assuming you have configured an NFS share `/srv/nfs` and the address of your `NFS server`, create the following file:
 
 ```
 vi sc-nfs.yaml
