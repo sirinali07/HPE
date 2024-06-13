@@ -191,7 +191,7 @@ sudo rbd create --size 4G rbd_pool/rbd_volume
 sudo rbd ls rbd_pool
 ```
 ```
-sudo rbd info rbd_pool_1/rbd_volume
+sudo rbd info rbd_pool/rbd_volume
 ```
 `On RBD Client:`
 Now we will load the RBD (Rados Block Device) kernel module, which is necessary for interacting with RBD devices
