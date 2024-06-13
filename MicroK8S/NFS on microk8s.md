@@ -1,4 +1,4 @@
-# Use NFS for Persistent Volumes on MicroK8s
+# Use NFS for Persistent Volumes on MicroK8s (self Excercise)
 
 ## Task 1: Setup an NFS server on local host
 
