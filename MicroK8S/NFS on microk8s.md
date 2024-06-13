@@ -93,13 +93,41 @@ vi pvc-nfs.yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: my-pvc
+  name: nfs-claim
 spec:
   storageClassName: nfs-csi
   accessModes: [ReadWriteOnce]
   resources:
     requests:
       storage: 5Gi
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nfs-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nfs-pod
+  template:
+    metadata:
+      labels:
+        app: nfs-pod
+    spec:
+      volumes:
+      - name: nfs-pv-storage
+        persistentVolumeClaim:
+           claimName: nfs-claim
+      containers:
+      - name: nfs-container
+        image: nginx
+        ports:
+          - containerPort: 80
+            name: "http-server"
+        volumeMounts:
+          - mountPath: "/usr/share/nginx/html"
+            name: nfs-pv-storage
 ```
 
  Then create the PVC  
@@ -109,8 +137,9 @@ microk8s kubectl apply -f  pvc-nfs.yaml
   If everything has been configured correctly, you should be able to check the PVC…
 
 ```
-microk8s kubectl describe pvc my-pvc
+microk8s kubectl get po,pv,pvc
 ```
-
-
+```
+microk8s kubectl describe po nfs-deploy
+```
 	
