@@ -77,7 +77,7 @@ mountOptions:
 ```
 Then apply it on your MicroK8s cluster with:
 ```
-microk8s kubectl apply -f - < sc-nfs.yaml
+microk8s kubectl apply -f  sc-nfs.yaml
 ```
 
 Create a new PVC
@@ -104,7 +104,7 @@ spec:
 
  Then create the PVC  
 ```
-microk8s kubectl apply -f - < pvc-nfs.yaml
+microk8s kubectl apply -f  pvc-nfs.yaml
 ```
   If everything has been configured correctly, you should be able to check the PVC…
 
