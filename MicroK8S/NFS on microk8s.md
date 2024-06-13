@@ -4,7 +4,7 @@
 
 If you don’t have a suitable NFS server already, you can simply create one on a local machine with the following commands on Ubuntu:
 ```
-sudo apt-get install nfs-kernel-server
+sudo apt-get install nfs-kernel-server -y
 ```
 
 Create a directory to be used for NFS:
