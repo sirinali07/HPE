@@ -35,3 +35,28 @@ sudo ceph osd unset noout
 ```
 sudo ceph status
 ```
+common commands to check the status of `Microceph cluster`
+```
+sudo ceph health detail
+```
+```
+sudo microceph status
+```
+```
+sudo ceph status
+```
+```
+sudo ceph log last 1000
+```
+```
+sudo ceph pg stat
+```
+```
+sudo ceph osd status
+```
+```
+sudo ceph osd tree
+```
+```
+sudo watch -n 5 ceph osd status
+```
