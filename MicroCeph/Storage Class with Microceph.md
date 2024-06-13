@@ -92,7 +92,7 @@ Create a YAML configuration that defines a PersistentVolumeClaim (PVC) and a Dep
 vi storageclass.yml
 ```
 Add the below lines, save and exit using esc + :wq!
-```
+```yaml
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
