@@ -23,7 +23,7 @@ sudo vi /var/snap/microk8s/current/var/kubernetes/backend/cluster.yaml
 ```
 
 ```
-sudo cat var/snap/microk8s/current/var/kubernetes/backend/cluster.yaml
+sudo cat /var/snap/microk8s/current/var/kubernetes/backend/cluster.yaml
 ```
 
 ### Task 4: Reconfigure dqlite
