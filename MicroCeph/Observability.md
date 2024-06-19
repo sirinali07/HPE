@@ -11,7 +11,10 @@ First, SSH into your EC2 instance.
 ```
 ssh -i <your-key.pem> ubuntu@<ec2-public-ip>
 ```
-
+Set Hostname
+```
+sudo hostnamectl hostname prometheus
+```
 ### Task 2: Install and Configure Prometheus
 Create Prometheus User and Directories
 ```
@@ -114,7 +117,7 @@ echo "deb [signed-by=/usr/share/keyrings/grafana.key] https://apt.grafana.com st
 sudo apt-get update
 ```
 ```
-sudo apt-get install grafana
+sudo apt-get install grafana -y
 ```
 Start and Enable Grafana Service
 ```
@@ -162,9 +165,9 @@ http://<ec2-public-ip>:3000
 ```
 Login with default credentials (admin/admin) and set a new password.</br>
 In Grafana, import the Ceph dashboard:
-```
+
 https://grafana.com/grafana/dashboards/9550-ceph-cluster/
-```
+
 Ensure that Prometheus is scraping the metrics from both Prometheus and Ceph by checking the targets in Prometheus:
 ```
 http://<ec2-public-ip>:9090/targets
