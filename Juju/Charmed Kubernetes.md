@@ -53,7 +53,7 @@ sudo snap install kubectl --classic --channel 1.28/stable
 ```
 Create the `.kube` directory in your current working directory of the user:
 ```
-sudo mkdir ~/.kube
+mkdir ~/.kube
 ```
 Copy the kubeconfig file from the `Kubernetes control plane` to your local `Juju server`:
 ```
