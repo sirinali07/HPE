@@ -49,7 +49,7 @@ juju status
 ### Task 2 : Accessing Kubernetes Cluster with kubectl on Juju Server
 Install kubectl using the snap package manager:
 ```
-sudo snap install kubectl --classic
+sudo snap install kubectl --classic --channel 1.28/stable
 ```
 Create the `.kube` directory in your current working directory of the user:
 ```
