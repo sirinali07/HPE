@@ -38,7 +38,7 @@ juju clouds
 ```
 Bootstrap the Juju controller:
 
-juju bootstrap '<region>' '<controller-name>' --credential '<credential-name>'
+juju bootstrap (region) (controller-name) --credential (credential-name>)
 
 ```
 juju bootstrap aws/us-west-1 my-controller --credential aws-cred
