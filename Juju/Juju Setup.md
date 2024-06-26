@@ -4,7 +4,7 @@
 * Access Key ID and Secret Access Key for AWS
 
 ### Task 1: Launching Instances on AWS
-* `1` Instances of `4 cores, 4GB RAM`, with `Storage: 20 GB` instance with OS version as `Ubuntu 20.04 LTS` in your preferred region 
+* `1` Instances of `4 cores, 4GB RAM`, with `Storage: 20 GB` instance with OS version as `Ubuntu 20.04 LTS` in your `preferred region(i.e us-west-1)` 
 
 Connect to your EC2 instance using SSH, and Set the Hostname 
 ```
