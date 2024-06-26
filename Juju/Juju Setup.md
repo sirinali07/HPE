@@ -38,7 +38,7 @@ juju clouds
 ```
 Bootstrap the Juju controller:
 
-juju bootstrap (region) (controller-name) --credential (credential-name>)
+juju bootstrap (region) (controller-name) --credential (credential-name)
 
 ```
 juju bootstrap aws/us-west-1 my-controller --credential aws-cred
@@ -49,7 +49,7 @@ juju controllers
 ```
 Creating a Juju Model:
 
-juju add-model (<model-name>)  --credential '<credential-name>' aws-cred <region>
+juju add-model (model-name)  --credential (credential-name) aws-cred (region)
 
 ```
 juju add-model app-model --credential aws-cred aws/us-west-1
@@ -82,6 +82,6 @@ juju status
 Access the Apache2 application in a web browser:
 * Find the `public IP` of the machine where Apache2 is deployed from the `juju status` output.
 * Ensure port 80 is open in the security group of the Apache2 machine.
-* Access the Apache2 application in a web browser: `http://<Public-IP>`
+* Access the Apache2 application in a web browser: `http://Public-IP`
   
 
