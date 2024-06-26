@@ -49,7 +49,7 @@ juju controllers
 ```
 Creating a Juju Model:
 
-juju add-model '<model-name>'  --credential '<credential-name>' aws-cred <region>
+juju add-model (<model-name>)  --credential '<credential-name>' aws-cred <region>
 
 ```
 juju add-model app-model --credential aws-cred aws/us-west-1
