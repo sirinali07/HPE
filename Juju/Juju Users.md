@@ -2,7 +2,7 @@
 ### Task 1 : Juju users
 Identify the Current User:
 ```
-whoami
+juju whoami
 ```
 List all Juju users:
 ```
