@@ -34,7 +34,7 @@ juju add-credential aws
 Follow the on-screen prompts to enter a credential name (e.g., aws-cred), select a region (e.g., us-west-1), and provide your AWS access key and secret key.
 Verify credentials:
 ```
-juju cloud
+juju clouds
 ```
 Bootstrap the Juju controller:
 ```
