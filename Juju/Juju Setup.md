@@ -37,6 +37,9 @@ Verify credentials:
 juju clouds
 ```
 Bootstrap the Juju controller:
+
+juju bootstrap <region> <controller-name> --credential <credential-name>
+
 ```
 juju bootstrap aws/us-west-1 my-controller --credential aws-cred
 ```
@@ -45,6 +48,9 @@ Check the controller status:
 juju controllers
 ```
 Creating a Juju Model:
+
+juju add-model <model-name>  --credential <credential-name>l aws-cred <region>
+
 ```
 juju add-model app-model --credential aws-cred aws/us-west-1
 ```
