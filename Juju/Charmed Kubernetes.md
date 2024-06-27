@@ -32,7 +32,12 @@ Note: Refer the given URL for more information (https://ubuntu.com/kubernetes/do
 ```
 wget https://raw.githubusercontent.com/charmed-kubernetes/bundle/main/overlays/aws-overlay.yaml
 ```
-
+```
+juju add-model k8s-model --credential aws-cred aws/us-west-2
+```
+```
+juju models
+```
 Deploy the charmed-kubernetes bundle using Juju, referencing the created YAML files and specifying the channel:
 ```
 juju deploy charmed-kubernetes --channel 1.28/stable --overlay k8s.yaml --overlay aws-overlay.yaml --trust
